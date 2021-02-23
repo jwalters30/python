@@ -20,7 +20,7 @@ pygame.display.set_caption("Car Racing")
 all_sprites_list = pygame.sprite.Group()
 
 playerCar = Car(RED, 20, 30)
-playerCar.rect.x = 200
+playerCar.rect.x = 250
 playerCar.rect.y = 300
 
 # Add the car to the list of objects
