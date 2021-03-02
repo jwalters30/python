@@ -93,6 +93,13 @@ while carryOn:
             car.repaint(random.choice(colorList))
             car.rect.y = -200
 
+    #Check if there is a car collision
+    car_collision_list = pygame.sprite.spritecollide(playerCar,all_coming_cars,False)
+    for car in car_collision_list:
+        print("Car crash!")
+        #End Of Game
+        carryOn=False
+
     all_sprites_list.update()
 
     #Drawing on Screen
@@ -107,7 +114,7 @@ while carryOn:
     pygame.draw.line(screen, WHITE, [340,0],[340,SCREENHEIGHT],5)
 
 
-    #Now let's draw all the sprites in one go. (For now we only have 1 sprite!)
+    #Now let's draw all the sprites in one go.
     all_sprites_list.draw(screen)
 
     #Refresh Screen
